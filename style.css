@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@keyframes central-text-final {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    60% {
+        transform: translate(100vw, -100vh) rotate(90deg);
+    }
+    60.001% {
+        transform: translate(-100vw, 0) rotate(-90deg);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out-in {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes swipe {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes in-from-left {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes top-to-btm {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh)
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+html,
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+canvas {
+    align-items: center;
+}
+
+#tsparticles {
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 37%, rgba(9, 9, 121, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.select-bar {
+    height: 70px;
+    width: 100%;
+    background-color: purple;
+    position: absolute;
+    animation: swipe 3s ease-in-out forwards;
+}
+
+#projects-btn {
+    opacity: 1;
+    background: blue;
+    width: 10em;
+    height: 4em;
+    border: 0;
+    border-radius: 1vw;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.particle-button-div {
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+.central-div {
+    position: absolute;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: fit-content;
+}
+
+.animation-pt1 {
+    animation: fade-in 2s ease-in-out forwards;
+}
+
+.animation-pt2 {
+    animation: fade-out-in 2s ease-in-out forwards;
+}
+
+.animation-pt3 {
+    animation: central-text-final 5s ease-in-out forwards;
+}
+
+.material-icons.background-options {
+    font-size: 48px;
+    cursor: pointer;
+}
+
+#report-issue-btn {
+    color: white;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+}
+
+.allow-shake:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
