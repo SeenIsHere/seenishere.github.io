@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error 418 (i'm a teapot)!?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @keyframes central-text-final {
+          0% {
+              transform: translate(-50%, -50%) rotate(0);
+          }
+          60% {
+              transform: translate(100vw, -100vh) rotate(90deg);
+          }
+          60.001% {
+              transform: translate(-100vw, 0) rotate(-90deg);
+          }
+          100% {
+              transform: translate(-50%, -50%);
+          }
+      }
+
+      @keyframes fade-in {
+          0% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+
+      @keyframes fade-out-in {
+          0% {
+              opacity: 1;
+          }
+          50% {
+              opacity: 0;
+          }
+          100% {
+              opacity: 1;
+          }
+      }
+
+      @keyframes rotateTeaPot {
+        0% {
+          transform: rotateY(0);
+        }
+        100% {
+          transform: rotateY(90deg);
+        }
+      }
+
+      .central-div {
+          color:black;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: fit-content;
+      }
+
+      .animation-pt1 {
+          animation: fade-in 2s ease-in-out forwards;
+      }
+
+      .animation-pt2 {
+          animation: fade-out-in 2s ease-in-out forwards;
+      }
+
+      .animation-pt3 {
+          animation: central-text-final 5s ease-in-out forwards;
+      }
+
+      img{
+        width: 5vw;
+        animation: rotateTeaPot 0.6s ease-in-out forwards;
+      }
+
+      img:hover {
+        animation: rotateTeaPot 0.6s ease-in-out reverse;
+      }
+    </style>
+</head>
+
+<body onload="onLoad()">
+        <!-- Opening Animation -->
+        <div class="central-div animation-pt1" id="central-text">
+            <b>418.</b>
+            <a>im a little teapot</a>
+        </div>
+    <script>
+
+      function onLoad(){
+        //Gets central text div
+        var centralText = document.getElementById('central-text')
+
+        //First timeout which removes the first animation class and adds the 2nd animation class for a fade affect after 3 seconds
+        var timeout = setTimeout(function() {
+                centralText.classList.remove('animation-pt1')
+                centralText.classList.add('animation-pt2')
+
+                //Second timeout which half throw the fade affect where no text is showing, it replaces it with different text
+                var timeout2 = setTimeout(function() {
+                        centralText.innerHTML = `<a>The requested entity body is short and stout.</a>`
+
+                        //Third timeout which removes the 2nd animation and adds the 3rd so that it goes off the screen
+                        var timeout3 = setTimeout(function() {
+                                centralText.classList.remove('animation-pt2')
+                                centralText.classList.add('animation-pt3')
+
+                                //Final timeout which changes the final text while its offscreen
+                                var timeout4 = setTimeout(function() {
+                                        centralText.innerHTML = 
+                                        `
+                                        <img src="https://th.bing.com/th/id/R.1f4f80132c0f9042db582cdab60a62e2?rik=ey%2fW83J7n5vRow&riu=http%3a%2f%2fcliparts.co%2fcliparts%2fkc8%2fokq%2fkc8okqzqi.png&ehk=cazFNjPG8GmB4%2bcDUQZgHbJ8Xxh4ADv3ohcgXsO11ao%3d&risl=&pid=ImgRaw&r=0"></img>
+                                        <a>Tip me over and pour me out.<a/>
+                                          `
+
+                                    }, 3000) //End of 4th
+
+                            }, 3000) //End of 3rd
+
+                    }, 1000) //End of 2nd
+
+            }, 3000) //End of 1st
+
+      }
+    </script>
+</body>
+
+</html>
