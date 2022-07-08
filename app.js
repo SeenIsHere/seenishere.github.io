@@ -49,7 +49,7 @@ else {
       topGenre: []
     }
   
-    document.body.innerText = "What is your msost listened to song song?\n\n" + generateQuiz.topSong.map((item, i) => ["(Correct Answer) A", "B", "C", "D"][i] + ". " + item.name).join("\n")
+    document.body.innerText = "What is your msost listened to song song?\n\n" + (generateQuiz.topSong.map((item, i) => ["(Correct Answer) A", "B", "C", "D"][i] + ". " + item.name).join("\n"))
     
   });
 }
