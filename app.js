@@ -13,7 +13,7 @@ const options = {
   _token: hash.access_token,
   authEndpoint: 'https://accounts.spotify.com/authorize',
   clientId: 'a2fcb13fd4464b61942c5ee36cbcff18',
-  redirectUri: 'http://127.0.0.1:5500',
+  redirectUri: 'https://seanthebean.xyz',
   scopes: ['user-top-read']
 }
 
