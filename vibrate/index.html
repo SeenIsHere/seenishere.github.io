@@ -7,12 +7,16 @@
     <title>Vibrate</title>
 </head>
 <body>
-    <button>Start Vibrate</button>
+    <input type="checkbox" id="x">
+    <label for="x">Turn Vibration On/Off</label>
     <script>
-        document.querySelector("button").onclick = () => {
-            
-            window.navigator.vibrate(1000)
-        }
+        var x = setInterval(() => {
+            if(document.querySelector("input").checked){
+                window.navigator.vibrate(1000);
+                //console.log("Potato")
+            }
+        }, 1000)
+
     </script>
 </body>
 </html>
